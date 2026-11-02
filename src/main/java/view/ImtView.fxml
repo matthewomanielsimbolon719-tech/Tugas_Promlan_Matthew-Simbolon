@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Arc?>
+<?import javafx.scene.shape.Polygon?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="400.0" style="-fx-background-color: #F8F9FA;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ImtController">
+   <children>
+      <Label layoutX="20.0" layoutY="20.0" text="Kalkulator IMT" textFill="#333333">
+         <font><Font name="System Bold" size="22.0" /></font>
+      </Label>
+
+      <Pane layoutX="20.0" layoutY="70.0" prefHeight="90.0" prefWidth="360.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+         <children>
+            <Label layoutX="30.0" layoutY="15.0" text="Tinggi (cm)" textFill="#888888" />
+            <TextField fx:id="txtTinggi" alignment="CENTER" layoutX="15.0" layoutY="40.0" prefWidth="100.0" style="-fx-background-color: transparent; -fx-border-color: transparent transparent #cccccc transparent;">
+               <font><Font name="System Bold" size="16.0" /></font>
+            </TextField>
+
+            <Label layoutX="220.0" layoutY="15.0" text="Berat (kg)" textFill="#888888" />
+            <TextField fx:id="txtBerat" alignment="CENTER" layoutX="200.0" layoutY="40.0" prefWidth="100.0" style="-fx-background-color: transparent; -fx-border-color: transparent transparent #cccccc transparent;">
+               <font><Font name="System Bold" size="16.0" /></font>
+            </TextField>
+         </children>
+      </Pane>
+      
+      <Button layoutX="145.0" layoutY="175.0" mnemonicParsing="false" onAction="#hitungIMT" prefHeight="35.0" prefWidth="110.0" style="-fx-background-color: #2196F3; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 20;" text="HITUNG" />
+
+      <Pane layoutX="20.0" layoutY="225.0" prefHeight="200.0" prefWidth="360.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+         <children>
+            <Arc fill="TRANSPARENT" layoutX="180.0" layoutY="150.0" length="-60.0" radiusX="110.0" radiusY="110.0" startAngle="180.0" stroke="#2196F3" strokeWidth="40.0" type="OPEN" />
+            <Arc fill="TRANSPARENT" layoutX="180.0" layoutY="150.0" length="-60.0" radiusX="110.0" radiusY="110.0" startAngle="120.0" stroke="#4CAF50" strokeWidth="40.0" type="OPEN" />
+            <Arc fill="TRANSPARENT" layoutX="180.0" layoutY="150.0" length="-60.0" radiusX="110.0" radiusY="110.0" startAngle="60.0" stroke="#F44336" strokeWidth="40.0" type="OPEN" />
+
+            <Polygon fx:id="jarumIndikator" fill="#333333" layoutX="180.0" layoutY="150.0" points="-5.0,0.0, 5.0,0.0, 0.0,-80.0" />
+            <Polygon fill="#333333" layoutX="180.0" layoutY="150.0" points="-8.0,-5.0, 8.0,-5.0, 0.0,10.0" />
+
+            <Label layoutX="168.0" layoutY="155.0" text="IMT" textFill="#888888" />
+            <Label fx:id="lblImt" alignment="CENTER" layoutX="105.0" layoutY="170.0" prefWidth="150.0" text="0.0" textFill="#2196F3">
+               <font><Font name="System Bold" size="24.0" /></font>
+            </Label>
+         </children>
+      </Pane>
+
+      <Pane layoutX="20.0" layoutY="440.0" prefHeight="230.0" prefWidth="360.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+         <children>
+            <HBox layoutX="20.0" layoutY="15.0" prefWidth="320.0" spacing="130.0">
+               <Label text="Kategori" textFill="#888888" />
+               <Label text="Selisih" textFill="#888888" />
+            </HBox>
+            <HBox layoutX="20.0" layoutY="35.0" prefWidth="320.0" spacing="90.0">
+               <Label fx:id="lblKategori" prefWidth="130.0" text="-" textFill="#2196F3">
+                  <font><Font name="System Bold" size="14.0" /></font>
+               </Label>
+               <Label fx:id="lblSelisih" text="0.0 kg" textFill="#2196F3">
+                  <font><Font name="System Bold" size="14.0" /></font>
+               </Label>
+            </HBox>
+            
+            <VBox layoutX="20.0" layoutY="80.0" spacing="5.0">
+               <Label text="Kurang Bobot           &lt; 18.5" textFill="#888888" />
+               <Label text="Normal                     18.5 - 24.9" textFill="#4CAF50" />
+               <Label text="Kelebihan Bobot       25.0 - 29.9" textFill="#888888" />
+               <Label text="Obesitas                   &gt; 30.0" textFill="#888888" />
+            </VBox>
+            
+            <HBox layoutX="20.0" layoutY="190.0" prefWidth="320.0" spacing="100.0">
+               <Label text="Bobot Normal" textFill="#333333">
+                  <font><Font name="System Bold" size="13.0" /></font>
+               </Label>
+               <Label fx:id="lblBobotNormal" text="0 - 0 kg" textFill="#333333">
+                  <font><Font name="System Bold" size="13.0" /></font>
+               </Label>
+            </HBox>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
